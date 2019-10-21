@@ -30,6 +30,8 @@ module Activepesel
         21
       when (61..72)
         22
+      else
+        0
       end
     end
 
