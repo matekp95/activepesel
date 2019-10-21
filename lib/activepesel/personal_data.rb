@@ -30,17 +30,15 @@ module Activepesel
         21
       when (61..72)
         22
-      else
-        0
       end
     end
 
     def year(pesel)
-      pesel.number[0..1].to_i + 100 * get_century(pesel)
+      pesel.number[0..1].to_i + 100 * get_century(pesel).to_i
     end
 
     def month(pesel)
-      pesel.number[2..3].to_i - DELTA[get_century(pesel)]
+      pesel.number[2..3].to_i - DELTA[get_century(pesel)].to_i
     end
     
     def day(pesel)
